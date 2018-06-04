@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<title>Australia Dot Map</title>
+	<meta name="description" content="pixel map" />
+
+	<!-- amCharts javascript sources -->
+	<script type="text/javascript" src="https://www.amcharts.com/lib/3/ammap.js"></script>
+	<script type="text/javascript" src="https://www.amcharts.com/lib/3/maps/js/australiaLow.js"></script>
+
+    <script src="//www.amcharts.com/lib/4/core.js"></script>
+    <script src="//www.amcharts.com/lib/4/charts.js"></script>
+    <script src="//www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="//www.amcharts.com/lib/4/themes/kelly.js"></script>
+
+	<!-- amCharts javascript code -->
+	<link rel="stylesheet" href="index.css">
+
+</head>
+<nav class="nav-center">
+        <ul class="center tabs tabs-transparent">
+            <li class="tab" onclick="openTab('intro')" ><a href="#intro">Introduction</a></li>
+            <li class="tab" onclick="openTab('piediv')"><a href="#piediv">Popular Products</a></li>
+            <li class="tab" onclick="openTab('heatmap')"><a href="#heatmap">Customer Activity</a></li>
+            <li class="tab" onclick="beginStory('map')"><a href="#map">Customer Locations</a></li>
+
+        </ul>
+</nav>
+
+<body style="margin:0; background-color:rgba(80,80,80,1); position: relative;" onload="openTab('intro')">
+
+<!--<div class="progress">-->
+    <!--<div class="determinate" style="width: 25%"></div>-->
+<!--</div>-->
+<!--<button onclick="toggleMap()">Click me</button>-->
+<!--<button onclick="showData()">Click me</button>-->
+
+<!--##################################### LANDING PAGE ########################################-->
+<div id="intro" class="tabified">
+    <div class="container">
+        <h2>Your insights are ready.</h2>
+        <h4>We analysed over 1700 transactions in the past year to bring you better insights into your customers.
+            Here is what we found.</h4>
+        </br>
+        </br>
+        <h4 class="center" style="color: #00BFFF;">Are you ready?</h4>
+        </br>
+        <div class="center" onclick="openTab('piediv')"><a class="btn-floating btn-large btn-intro blue pulse">
+            <i class="large material-icons">play_arrow</i></a>
+        </div>
+        <!--<div class="typewriter">-->
+            <!--<h4>Who are your customers?</h4>-->
+        <!--</div>-->
+    </div>
+</div>
+
+<!--##################################### HEATMAP ########################################-->
+<div id="heat-text" class="container tabified" style="display: none;">
+    <h2>Customer Activity</h2>
+    <h4>Monday, Tuesday and Wednesday are when customers <span style="color: #00BFFF;">spend the most.</span></h4>
+    <div id="heatmap" class="tabified" style="display: none;"></div>
+
+</div>
+<div id="heat-text1" class="container tabified" style="display: none;">
+    <h4>However, throughout the whole week <span style="color: #00BFFF;">9pm</span> is when customers spend the most.</h4>
+</div>
+<div id="storyButton" onclick="beginStory('map')" class="fixed-action-btn" style="display: none;">
+    <a class="btn-floating btn-large blue pulse">
+        <i class="large material-icons">play_arrow</i>
+    </a>
+</div>
+
+
+<!--##################################### PIXEL MAP ########################################-->
+<div class="tabified" id="map" style="width: 100%; height: 870px;"></div>
+<!--Put this after the map so it is displayed on top of it (using float-text-map-right)-->
+<div class="float-text-map-left tabified" style="display: none;">
+    <h4><span style="color: yellow;">Your customers </span>live in 584 </h4>
+    <h4>postcodes around</h4>
+    <h4>Australia.</h4>
+
+</div>
+<div class="float-text-map-right tabified" style="display: none;">
+    <h4>Postcodes near</h4>
+    <h4>Melbourne and Sydney <span style="color: #00FF00;"></span></h4>
+    <h4><span style="color: #00FF00;">spend the most.</span></h4>
+
+</div>
+<div class="float-text-map-bottom-right tabified" style="display: none;">
+    <h4>Postcodes with the</h4>
+    <h4><span style="color: #00BFFF;">highest profit</span></h4>
+    <h4>potential.</h4>
+
+</div>
+
+<!--##################################### PIE CHART ########################################-->
+<div id="pie-text" class="container tabified" style="display: none;">
+    <h2>Popular products</h2>
+    <h4>The <span style="color: #00BFFF;">Chloe Dress</span> is the most popular product generating <span style="color: #00BFFF;">$119,820 profit.</span></h4>
+    <div id="piediv" class="tabified" style="display: none;"></div>
+</div>
+<div id="piebutton" onclick="openTab('heatmap')" class="fixed-action-btn tabified" style="display: none;">
+    <a class="btn-floating btn-large blue pulse">
+        <i class="large material-icons">play_arrow</i>
+    </a>
+</div>
+
+
+<script type="text/javascript" src="pixelMap.js"></script>
+</body>
+
+</html>
