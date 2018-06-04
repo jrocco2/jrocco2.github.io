@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!--############################# IMPORT THE NECESSARY LIBRARIES #############################-->
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-
-    <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-	<title>Australia Dot Map</title>
-	<meta name="description" content="pixel map" />
-
-	<!-- amCharts javascript sources -->
+	<!-- amCharts3 javascript sources -->
 	<script type="text/javascript" src="https://www.amcharts.com/lib/3/ammap.js"></script>
 	<script type="text/javascript" src="https://www.amcharts.com/lib/3/maps/js/australiaLow.js"></script>
 
+    <!-- amCharts4 javascript sources -->
     <script src="//www.amcharts.com/lib/4/core.js"></script>
     <script src="//www.amcharts.com/lib/4/charts.js"></script>
     <script src="//www.amcharts.com/lib/4/themes/animated.js"></script>
@@ -24,8 +20,13 @@
 
 	<!-- amCharts javascript code -->
 	<link rel="stylesheet" href="index.css">
+    <!--Give your project a title-->
+    <title>Data Visualisation</title>
+    <meta name="description" content="Data Visualisation" />
 
 </head>
+<!--##################################### Navigation ########################################-->
+<!--Use a single page navigation so that visuals can be loaded from beginning for quicker transition speeds-->
 <nav class="nav-center">
         <ul class="center tabs tabs-transparent">
             <li class="tab" onclick="openTab('intro')" ><a href="#intro">Introduction</a></li>
@@ -36,13 +37,8 @@
         </ul>
 </nav>
 
+<!--When the page loads open the Landing Page-->
 <body style="margin:0; background-color:rgba(80,80,80,1); position: relative;" onload="openTab('intro')">
-
-<!--<div class="progress">-->
-    <!--<div class="determinate" style="width: 25%"></div>-->
-<!--</div>-->
-<!--<button onclick="toggleMap()">Click me</button>-->
-<!--<button onclick="showData()">Click me</button>-->
 
 <!--##################################### LANDING PAGE ########################################-->
 <div id="intro" class="tabified">
@@ -57,13 +53,11 @@
         <div class="center" onclick="openTab('piediv')"><a class="btn-floating btn-large btn-intro blue pulse">
             <i class="large material-icons">play_arrow</i></a>
         </div>
-        <!--<div class="typewriter">-->
-            <!--<h4>Who are your customers?</h4>-->
-        <!--</div>-->
     </div>
 </div>
 
 <!--##################################### HEATMAP ########################################-->
+
 <div id="heat-text" class="container tabified" style="display: none;">
     <h2>Customer Activity</h2>
     <h4>Monday, Tuesday and Wednesday are when customers <span style="color: #00BFFF;">spend the most.</span></h4>
@@ -81,6 +75,7 @@
 
 
 <!--##################################### PIXEL MAP ########################################-->
+
 <div class="tabified" id="map" style="width: 100%; height: 870px;"></div>
 <!--Put this after the map so it is displayed on top of it (using float-text-map-right)-->
 <div class="float-text-map-left tabified" style="display: none;">
@@ -99,7 +94,6 @@
     <h4>Postcodes with the</h4>
     <h4><span style="color: #00BFFF;">highest profit</span></h4>
     <h4>potential.</h4>
-
 </div>
 
 <!--##################################### PIE CHART ########################################-->
@@ -114,8 +108,8 @@
     </a>
 </div>
 
-
-<script type="text/javascript" src="pixelMap.js"></script>
+<!--Import Javascript file where visuals are created-->
+<script type="text/javascript" src="index.js"></script>
 </body>
 
 </html>
